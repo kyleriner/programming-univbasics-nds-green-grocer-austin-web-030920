@@ -45,9 +45,6 @@ def apply_coupons(cart, coupons)
   #
   # REMEMBER: This method **should** update cart
   
-  pp cart
-  pp coupons
-  
   discounted_items = []
   i = 0
   while i < coupons.length do
