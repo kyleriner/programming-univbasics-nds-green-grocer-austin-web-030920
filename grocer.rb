@@ -52,18 +52,18 @@ def apply_coupons(cart, coupons)
   i = 0
   while i < cart.length do
     item = find_item_by_name_in_collection(coupons[counter][:item], cart)
-    couponed_item_name = "#{coupons[counter][:item]} W/COUPON"
+    couponed_item_name = "#{coupons[i][:item]} W/COUPON"
     item_with_coupon = find_item_by_name_in_collection(couponed_item_name, cart)
     
-    if item && item[:count] >= coupons[counter][:num]
+    if item && item[:count] >= coupons[i][:num]
       if item_with_coupon
-        item_with_coupon[:count] += coupons[counter][:num]
-        item[:count] -= coupons[counter][:num]
+        item_with_coupon[:count] += coupons[i][:num]
+        item[:count] -= coupons[i][:num]
       else
         item_with_coupon = {
           :item => couponed_item_name,
-          :price => coupons[counter][:cost] / coupons[counter][:num],
-          :count => coupons[counter][:num],
+          :price => coupons[i][:cost] / coupons[i][:num],
+          :count => coupons[i][:num],
           :clearance => item[:clearance]
         }
         cart << item_with_coupon
