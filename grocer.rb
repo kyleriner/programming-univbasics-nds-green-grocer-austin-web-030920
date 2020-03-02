@@ -90,8 +90,8 @@ def apply_clearance(cart)
     else
     end
     i +=1
-    return cart
   end
+  return cart
 end
 
 def checkout(cart, coupons)
