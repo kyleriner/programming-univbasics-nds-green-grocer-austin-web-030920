@@ -104,7 +104,16 @@ def checkout(cart, coupons)
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
   
+  cart = consolidate_cart(cart)
+  cart = apply_coupons(cart)
+  cart = apply_coupons(cart)
   
+  total_cost = 0
+  i = 0
+  while i < cart.length
+    total_cost = total_cost + (cart[i][:price] * cart[i][count])
+    i += 1
+  end
   
   
 end
