@@ -99,14 +99,17 @@ def checkout(cart, coupons)
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
   
+  P "STARTING CART BELOW"
   pp cart
   
   consolidated_cart = consolidate_cart(cart)
+  P "CONSOLIDATED BELOW"
   pp consolidated_cart
   couponed_cart = apply_coupons(consolidated_cart, coupons)
+  p "COUPONED BELOW"
   pp couponed_cart
   final_cart = apply_clearance(couponed_cart)
-  
+  P "FINAL CART BELOW"
   pp final_cart
   
   total_cost = 0
