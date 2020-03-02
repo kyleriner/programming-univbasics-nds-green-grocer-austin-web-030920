@@ -25,6 +25,7 @@ def consolidate_cart(cart)
   i = 0
   while i < cart.length do
     if cart[i][:item] in consolidated_items[:item]
+      
 end
 
 def apply_coupons(cart, coupons)
