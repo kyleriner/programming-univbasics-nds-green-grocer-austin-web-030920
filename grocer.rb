@@ -47,6 +47,14 @@ def apply_coupons(cart, coupons)
   
   pp cart
   pp coupons
+  
+  discounted_items = []
+  i = 0
+  while i < cart.length do
+    if find_item_by_name_in_collection(coupon[i][:item], cart)
+      discounted_items 
+      
+  
 end
 
 def apply_clearance(cart)
