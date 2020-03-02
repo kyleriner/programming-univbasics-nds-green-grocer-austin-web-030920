@@ -26,7 +26,18 @@ def consolidate_cart(cart)
   while i < cart.length do
     new_item = find_item_by_name_in_collection(cart[i][:item], consolidated_items)
     if new_item != nil
-      
+      new_item[:count] += 1
+    else
+      new_item = {
+        :item => cart[i][:item]
+        :price => cart[i][:price]
+        :clearance => cart[i][:clearance]
+        :count => 1
+      }
+      consolidated_items << new_item
+    end
+    i += 1
+  end
 end
 
 def apply_coupons(cart, coupons)
