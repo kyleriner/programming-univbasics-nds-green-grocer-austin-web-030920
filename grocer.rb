@@ -91,6 +91,7 @@ def apply_clearance(cart)
     end
     i +=1
     return cart
+  end
 end
 
 def checkout(cart, coupons)
